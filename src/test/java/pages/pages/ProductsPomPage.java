@@ -18,4 +18,8 @@ public class ProductsPomPage extends BasePomPage {
     public void addShoppingCart() {
         driver.findElement(SHOPPING_CART).click();
     }
+    public void shoppingCart () {
+        driver.findElement(ADD_TO_CART).click();
+        driver.findElement(SHOPPING_CART).click();
+    }
 }

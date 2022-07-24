@@ -27,4 +27,10 @@ public class SauceDemoLoginPomPage extends BasePomPage {
     public void clickLogin() {
         driver.findElement(LOGIN_BUTTON).click();
     }
+    public void loginPage () {
+        driver.get(Urls.REGISTER_FORM_URL);
+        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.Username);
+        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.Password);
+        driver.findElement(LOGIN_BUTTON).click();
+    }
 }
