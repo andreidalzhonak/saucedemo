@@ -1,8 +1,5 @@
 package tests;
 
-import constants.Credentials;
-import constants.Urls;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.pages.ProductsPomPage;
@@ -17,7 +14,6 @@ public class sauceDemoPomTest extends BaseTest {
         YourCartPomPage yourCartPomPage = new YourCartPomPage(driver);
         sauceDemoLoginPomPage.loginPage();
         productsPomPage.shoppingCart();
-
         Assert.assertEquals(yourCartPomPage.takeItemName(), "Sauce Labs Backpack");
         Assert.assertEquals(yourCartPomPage.takeItemPrice(), "$29.99");
     }
