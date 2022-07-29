@@ -1,17 +1,17 @@
-package pages.pages;
+package fluentpage;
 
 import constants.Credentials;
 import constants.Urls;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.pages.BasePomPage;
 
 import java.util.ArrayList;
 
 
-public class SauceDemoLoginPomPage extends BasePomPage {
+public class SauceDemoLoginFluentPage extends BasePomPage {
 
     private By USERNAME_INPUT = By.id("user-name");
     private By PASSWORD_INPUT = By.id("password");
@@ -19,40 +19,41 @@ public class SauceDemoLoginPomPage extends BasePomPage {
     private By LINKEDIN_BUTTON = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[3]/a");
     private By LOGO_LINKEDIN = By.cssSelector("body > div > header > nav > a > icon");
 
-    public SauceDemoLoginPomPage(WebDriver driver) {
+
+    public SauceDemoLoginFluentPage(WebDriver driver) {
         super(driver);
     }
 
-    public void openSauceDemoLoginPage() {
+
+    public SauceDemoLoginFluentPage openSauceDemoLoginPage() {
         driver.get(Urls.REGISTER_FORM_URL);
+        return this;
     }
 
-    public void inputUsername(String Username) {
+    public SauceDemoLoginFluentPage inputUsername(String Username) {
         driver.findElement(USERNAME_INPUT).sendKeys(Credentials.Username1);
+        return this;
     }
 
-    public void inputPassword(String Password) {
+    public SauceDemoLoginFluentPage inputPassword(String Password) {
         driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.Password);
+        return this;
     }
 
-    public void clickLogin() {
+    public SauceDemoLoginFluentPage clickLogin() {
         driver.findElement(LOGIN_BUTTON).click();
+        return this;
     }
 
-    public void clickLinkedinButton() {
+    public SauceDemoLoginFluentPage clickLinkedinButton() {
         driver.findElement(LINKEDIN_BUTTON).click();
+        return this;
     }
 
-    public void loginPage() {
-        driver.get(Urls.REGISTER_FORM_URL);
-        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.Username1);
-        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.Password);
-        driver.findElement(LOGIN_BUTTON).click();
-    }
-
-    public void switchToNewTab() {
+    public SauceDemoLoginFluentPage switchToNewTab() {
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
+        return this;
     }
 
     public boolean logoLinkedin() {
