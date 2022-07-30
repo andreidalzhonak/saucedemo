@@ -28,11 +28,11 @@ public class SauceDemoLoginPomPage extends BasePomPage {
     }
 
     public void inputUsername(String Username) {
-        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.Username1);
+        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.USERNAME1);
     }
 
     public void inputPassword(String Password) {
-        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.Password);
+        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.PASSWORD);
     }
 
     public void clickLogin() {
@@ -45,8 +45,8 @@ public class SauceDemoLoginPomPage extends BasePomPage {
 
     public void loginPage() {
         driver.get(Urls.REGISTER_FORM_URL);
-        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.Username1);
-        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.Password);
+        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.USERNAME1);
+        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.PASSWORD);
         driver.findElement(LOGIN_BUTTON).click();
     }
 

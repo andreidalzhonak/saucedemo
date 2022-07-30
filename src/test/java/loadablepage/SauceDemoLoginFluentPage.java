@@ -35,12 +35,12 @@ public class SauceDemoLoginFluentPage extends BaseLoadablePage {
     }
 
     public SauceDemoLoginFluentPage inputUsername(String Username) {
-        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.Username1);
+        driver.findElement(USERNAME_INPUT).sendKeys(Credentials.USERNAME1);
         return this;
     }
 
     public SauceDemoLoginFluentPage inputPassword(String Password) {
-        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.Password);
+        driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.PASSWORD);
         return this;
     }
 
