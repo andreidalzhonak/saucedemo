@@ -3,11 +3,16 @@ package pages.pages;
 import constants.Credentials;
 import constants.Urls;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 
@@ -47,6 +52,14 @@ public class SauceDemoLoginPomPage extends BasePomPage {
         driver.get(Urls.REGISTER_FORM_URL);
         driver.findElement(USERNAME_INPUT).sendKeys(Credentials.USERNAME1);
         driver.findElement(PASSWORD_INPUT).sendKeys(Credentials.PASSWORD);
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        byte[] sourceFile = takesScreenshot.getScreenshotAs(OutputType.BYTES);
+        try {
+            String path = String.format("src/test/resources/%s_screenshot.png", "today");
+            Files.write(Paths.get(path), sourceFile);
+        } catch (IOException e) {
+           e.printStackTrace();
+        }
         driver.findElement(LOGIN_BUTTON).click();
     }
 

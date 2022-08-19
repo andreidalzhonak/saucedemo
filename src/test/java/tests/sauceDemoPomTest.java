@@ -16,9 +16,7 @@ public class sauceDemoPomTest extends BaseTest {
         YourCartPomPage yourCartPomPage = new YourCartPomPage(driver);
         sauceDemoLoginPomPage.openSauceDemoLoginPage();
         LoginSauceLab loginSauceLab = PrepareLoginData.getValidRegistration1();
-        sauceDemoLoginPomPage.inputUsername(loginSauceLab.getUsername());
-        sauceDemoLoginPomPage.inputPassword(loginSauceLab.getPassword());
-        sauceDemoLoginPomPage.clickLogin();
+        sauceDemoLoginPomPage.loginPage();
         productsPomPage.shoppingCart();
         Assert.assertEquals(yourCartPomPage.takeItemName(), "Sauce Labs Backpack");
         Assert.assertEquals(yourCartPomPage.takeItemPrice(), "$29.99");
