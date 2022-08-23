@@ -1,12 +1,13 @@
-package drivermanager.factorymanager;
+package threadlocalmanager;
+
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Arrays;
 
-public class ChromeDriverManager extends DriverManager {
-
+public class ChromeDriverThreadLocalManager extends DriverThreadLocalManager {
 
     @Override
     public void createDriver() {
@@ -15,7 +16,6 @@ public class ChromeDriverManager extends DriverManager {
         options.addArguments("--disable-notifications");
         options.setExperimentalOption("excludeSwitches",
                 Arrays.asList("disable-popup-blocking"));
-        driver = new ChromeDriver(options);
+        threadLocalDriver.set(new ChromeDriver(options));
     }
 }
-
