@@ -7,8 +7,8 @@ import pages.pages.SauceDemoLoginPomPage;
 import testdata.PrepareLoginData;
 
 public class FollowTheLinkLinkedinTest extends BaseTest {
-    @Test
-    public void addCartTest() {
+    @Test ()
+    public void logoLinkedinTest() {
         SauceDemoLoginPomPage sauceDemoLoginPomPage = new SauceDemoLoginPomPage(driver);
         sauceDemoLoginPomPage.openSauceDemoLoginPage();
         LoginSauceLab loginSauceLab = PrepareLoginData.getValidRegistration1();
